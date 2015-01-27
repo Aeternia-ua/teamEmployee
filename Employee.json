@@ -1,0 +1,20 @@
+{
+  "Employees": [{
+    "id": 1,
+    "salary": 80,
+    "name": "Freddy Cruger",
+    "position": "hr manager"
+  }],
+  "Employees": [{
+    "id": 2,
+    "salary": 100,
+    "name": "Max Gluteus",
+    "position": "executive"
+  }],
+  "Employees": [{
+    "id": 3,
+    "salary": "65",
+    "name": "Ozzy Osborne",
+    "position": "clerk"
+  }]
+}
