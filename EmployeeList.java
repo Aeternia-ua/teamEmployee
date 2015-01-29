@@ -36,13 +36,13 @@ ObjectMapper mapper = new ObjectMapper();
 	Arrays.sort(emplyeesArray, Employee.CompareByName);
 	for (Employee employee : emplyeesArray) {
 	System.out.println("Sorting by name : " + employee.getName() + " -> ID: " + employee.getId() + 
-			" " + employee.getPosition() + " : " + employee.getSalary());
+			". position -> " + employee.getPosition() + " : " + employee.getSalary());
 	}
 	
 	Arrays.sort(emplyeesArray, Employee.CompareBySalary);
 	for (Employee employee : emplyeesArray) {
 	System.out.println("Sorting by salary : " + employee.getName() + " -> ID: " + employee.getId() + 
-			" " + employee.getPosition() + " : " + employee.getSalary());
+			". position -> " + employee.getPosition() + " : " + employee.getSalary());
 	}
 	
 //	Arrays.sort(emplyeesArray, EmployeeList.CompareByPosition);
