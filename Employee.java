@@ -16,7 +16,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 
 public class Employee extends EmployeeList {
-
+	static EmployeeList[] emplyeesArray;
 	public static void main(String[] args) throws IOException, ParseException {
 		
 JSONParser parser = new JSONParser();	
@@ -33,21 +33,30 @@ ObjectMapper mapper = new ObjectMapper();
 	EmployeeList[] emplyeesArray = (EmployeeList[]) employees.toArray();
 	Arrays.sort(emplyeesArray);
 	
-	System.out.println ("Employees sorted by salary: ");
+	Arrays.sort(emplyeesArray, EmployeeList.CompareByName);
 	for (EmployeeList employee : emplyeesArray) {
-		System.out.println(employee.getId() + employee.getName() + " -> " + employee.getPosition() + " : " + employee.getSalary());
+	System.out.println("Sorting by name : " + employee.getName() + " -> ID: " + employee.getId() + 
+			" " + employee.getPosition() + " : " + employee.getSalary());
 	}
 	
-
-//	public List<Employee> sortByName (){
-//	Collections.sort(employees, new Comparator <Employee>() {
-//		@Override
-//		public int compare(Employee o1, Employee o2) {
-//			 return o1.getName().compareTo(o2.getName());
-//		}
-//	});
-//	return (List<Employee>) employees;
+	Arrays.sort(emplyeesArray, EmployeeList.CompareBySalary);
+	for (EmployeeList employee : emplyeesArray) {
+	System.out.println("Sorting by salary : " + employee.getName() + " -> ID: " + employee.getId() + 
+			" " + employee.getPosition() + " : " + employee.getSalary());
+	}
+	
+//	Arrays.sort(emplyeesArray, EmployeeList.CompareByPosition);
+//	for (EmployeeList employee : emplyeesArray) {
+//	System.out.println("Sorting by position : " + employee.getName() + " -> ID: " + employee.getId() + 
+//			" " + employee.getPosition() + " : " + employee.getSalary());
 //	}
+//	Arrays.sort(emplyeesArray, EmployeeList.CompareById);
+//	for (EmployeeList employee : emplyeesArray) {
+//	System.out.println("Sorting by ID : " + employee.getName() + " -> ID: " + employee.getId() + 
+//			" " + employee.getPosition() + " : " + employee.getSalary());
+//	}
+
+
 	}
 	}
 	

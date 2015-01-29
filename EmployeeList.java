@@ -1,9 +1,11 @@
+import java.util.Comparator;
+import org.apache.commons.lang.builder.CompareToBuilder;
 public class EmployeeList implements Comparable<EmployeeList> {
 	
 	private long id;
 	private String name;
 	private String position;
-	private long salary;
+	private double salary;
 	
 	public EmployeeList() {
 		
@@ -21,7 +23,7 @@ public class EmployeeList implements Comparable<EmployeeList> {
 		return position;
 	}
 	
-	public long getSalary() {
+	public double getSalary() {
 		return salary;
 	}
 	
@@ -37,10 +39,9 @@ public class EmployeeList implements Comparable<EmployeeList> {
 		this.position = position;
 	}
 	
-	public void setSalary(long salary) {
+	public void setSalary(double salary) {
 		this.salary = salary;
 	}
-	
 	
 	@Override
 	public int compareTo(EmployeeList o) {
@@ -48,14 +49,52 @@ public class EmployeeList implements Comparable<EmployeeList> {
 			this.salary > o.getSalary() ? 1 : 0;
 	}
 	
+	public static Comparator<EmployeeList> CompareByName = new Comparator<EmployeeList>() {
+		@Override
+		public int compare(EmployeeList empl, EmployeeList empl2) {
+		return new CompareToBuilder()
+		.append(empl.getName(), empl2.getName())
+		.append(empl.getId(), empl2.getId())
+		.append(empl.getPosition(), empl2.getPosition())
+		.append(empl.getSalary(), empl2.getSalary())
+		.toComparison();
+		}
+		};
+		
+		public static Comparator<EmployeeList> CompareBySalary = new Comparator<EmployeeList>() {
+			@Override
+			public int compare(EmployeeList empl, EmployeeList empl2) {
+			return new CompareToBuilder()
+			.append(empl.getSalary(), empl2.getSalary())
+			.append(empl.getName(), empl2.getName())
+			.append(empl.getId(), empl2.getId())
+			.append(empl.getPosition(), empl2.getPosition())
+			
+			.toComparison();
+			}
+			};
+			public static Comparator<EmployeeList> CompareByPosition = new Comparator<EmployeeList>() {
+				@Override
+				public int compare(EmployeeList empl, EmployeeList empl2) {
+				return new CompareToBuilder()
+				.append(empl.getPosition(), empl2.getPosition())
+				.append(empl.getName(), empl2.getName())
+				.append(empl.getId(), empl2.getId())
+				.append(empl.getSalary(), empl2.getSalary())
+				.toComparison();
+				}
+				};
+				public static Comparator<EmployeeList> CompareById = new Comparator<EmployeeList>() {
+					@Override
+					public int compare(EmployeeList empl, EmployeeList empl2) {
+					return new CompareToBuilder()
+					.append(empl.getId(), empl2.getId())
+					.append(empl.getName(), empl2.getName())
+					.append(empl.getPosition(), empl2.getPosition())
+					.append(empl.getSalary(), empl2.getSalary())
+					.toComparison();
+					}
+					};
+			
 
-//	public EmployeeList sortById (){
-//		@Override
-//	public int compareTo(EmployeeList o) {
-//		return this.id < o.getId() ? -1 :
-//			this.id > o.getId() ? 1 : 0;
-//	  }
-//	}
-//	public List<Employee> sortByName (){
-	
 }
