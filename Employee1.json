@@ -1,5 +1,32 @@
-{"employees":[
-{"id":"1","name":"Freddy Cruger","salary":"80","position":"hr manager"},
-{"id":"2","name":"Max Gluteus","salary":"100","position":"executive"},
-{"id":"3","name":"Ozzy Osborne","salary":"60","position":"clerk"}
-]}
+[
+	{
+		"id": 3,
+		"name":"Ozzy Osborne",	
+		"position":"just a cool guy",
+		"salary": 80.00
+	},
+	{
+		"id": 2,
+		"name":"Max Gluteus",
+		"position":"executive",
+		"salary": 100.00
+	},
+	{
+		"id": 1,
+		"name":"Zoidberg",
+		"position":"clerk",
+		"salary": 9.99
+	},
+	{
+		"id": 5,
+		"name":"Freddy Cruger",	
+		"position":"yodlle singer",
+		"salary": 40.00
+	},
+	{
+		"id": 4,
+		"name":"Hannibal Lecter",	
+		"position":"chef",
+		"salary": 200.00
+	}
+]
